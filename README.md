@@ -1,13 +1,16 @@
 # LCAlertViewController
 
+![image](https://github.com/LuochuanAD/LCAlertViewController/blob/master/LCAlertViewController/demo.gif)
+
+
 ***
 
 ***一,说明***
 
 ***
 支持iOS8及以上,LCAlertViewController将 UIPickerView和UIAlertViewController结合, 并且添加自定义的View 
-GITHub地址:
-[https://github.com/LuochuanAD/LCAlertViewController](https://github.com/LuochuanAD/LCAlertViewController "https://github.com/LuochuanAD/LCAlertViewController")
+blog地址:
+[https://blog.csdn.net/luochuanAD/article/details/83450748](https://blog.csdn.net/luochuanAD/article/details/83450748 "https://blog.csdn.net/luochuanAD/article/details/83450748")
 ***
 ***二,UIPickerView 与UIAlertViewController结合***
 
