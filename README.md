@@ -1,6 +1,6 @@
 # LCAlertViewController
 
-![image](https://raw.githubusercontent.com/LuochuanAD/LCAlertViewController/add-license-1/LCAlertViewController/demo.gif)
+![image](https://github.com/LuochuanAD/LCAlertViewController/blob/master/LCAlertViewController/demo.gif)
 
 
 ***
