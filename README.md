@@ -8,7 +8,7 @@
 ***一,说明***
 
 ***
-支持iOS8及以上,LCAlertViewController将 UIPickerView和UIAlertViewController结合, 并且添加自定义的View 
+支持iOS8及以上,适配iPhone和iPad. LCAlertViewController将 UIPickerView和UIAlertViewController结合, 并且添加自定义的View 
 blog地址:
 [https://blog.csdn.net/luochuanAD/article/details/83450748](https://blog.csdn.net/luochuanAD/article/details/83450748 "https://blog.csdn.net/luochuanAD/article/details/83450748")
 ***
@@ -70,12 +70,21 @@ typedef void(^FixedWidthBlcok) (CGFloat customViewWidth);
 ***
 ***
 由于使用的是系统的样式与动画效果, 那么LCAlertViewController的宽度和系统的保持相等
+
+
 LCAlertViewControllerStyleAlert : 
 宽度为 270;
 
-LCAlertViewControllerStyleActionSheet:
+(iPhone:) LCAlertViewControllerStyleActionSheet:
+
 iOS12.x版本 宽度为self.view.frame.size.width-16
+
 iOS12.0以下 宽度为self.view.frame.size.width-20
+
+(iPad:) LCAlertViewControllerStyleActionSheet:
+
+宽度设置为300
+
 ***
 
 
