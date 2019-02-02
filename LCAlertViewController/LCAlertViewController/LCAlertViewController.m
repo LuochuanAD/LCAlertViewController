@@ -18,6 +18,7 @@
 + (LCAlertViewController *)LC_alertControllerWithTitle:(NSString *)title dataArray:(NSArray *)array preferredStyle:(LCAlertViewControllerStyle)style{
     
     LCAlertViewController * alertVC;
+    
     if (style==LCAlertViewControllerStyleAlert) {
         alertVC = [LCAlertViewController alertControllerWithTitle:title message:@"\n\n\n\n\n\n\n" preferredStyle:UIAlertControllerStyleAlert];
     }else{
@@ -34,11 +35,18 @@
     if (self.flagStyle == LCAlertViewControllerStyleAlert) {
         self.pickerView.frame = CGRectMake(0, 45, 270, 140);
     }else{
-        if (@available(iOS 12.0, *)) {
-            self.pickerView.frame = CGRectMake(0, 30, self.view.frame.size.width-16, 140);
+        UIPopoverPresentationController *popover =self.popoverPresentationController;
+        if (popover) {//适配iPad
+            self.pickerView.frame = CGRectMake(0, 30, 300, 140);
         }else{
-            self.pickerView.frame = CGRectMake(0, 30, self.view.frame.size.width-20, 140);
+            if (@available(iOS 12.0, *)) {
+                self.pickerView.frame = CGRectMake(0, 30, self.view.frame.size.width-16, 140);
+            }else{
+                self.pickerView.frame = CGRectMake(0, 30, self.view.frame.size.width-20, 140);
+            }
         }
+        
+        
     }
     self.pickerView.delegate = self;
     self.pickerView.dataSource = self;

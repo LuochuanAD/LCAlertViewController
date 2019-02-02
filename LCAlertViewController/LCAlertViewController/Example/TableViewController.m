@@ -88,6 +88,15 @@
         alertVC = [LCAlertViewController LC_alertControllerWithTitle:@"Attention" dataArray:dataArray preferredStyle:LCAlertViewControllerStyleAlert];
     }else if ([type isEqualToString:@"actionSheet"]){
         alertVC = [LCAlertViewController LC_alertControllerWithTitle:@"Attention" dataArray:dataArray preferredStyle:LCAlertViewControllerStyleActionSheet];
+        UIPopoverPresentationController *popover =alertVC.popoverPresentationController;
+        if (popover) {//适配iPad
+            popover.sourceView = self.view;
+            popover.sourceRect = CGRectMake(0, 0,1, 1);
+            popover.permittedArrowDirections=UIPopoverArrowDirectionAny;
+        }
+        
+        
+        
     }
     
     [alertVC.pickerView selectRow:3 inComponent:0 animated:NO];
@@ -120,6 +129,12 @@
         alertVC = [LCAlertViewController LC_alertControllerWithTitle:@"Attention" dataArray:dataArray preferredStyle:LCAlertViewControllerStyleAlert];
     }else if ([type isEqualToString:@"actionSheet"]){
         alertVC = [LCAlertViewController LC_alertControllerWithTitle:@"Attention" dataArray:dataArray preferredStyle:LCAlertViewControllerStyleActionSheet];
+        UIPopoverPresentationController *popover =alertVC.popoverPresentationController;
+        if (popover) {//适配iPad
+            popover.sourceView = self.view;
+            popover.sourceRect = CGRectMake(0, 0,1, 1);
+            popover.permittedArrowDirections=UIPopoverArrowDirectionAny;
+        }
     }
     
     
@@ -142,7 +157,7 @@
         
     }];
 }
-
+//注意此方法下 自定义View的宽度在iPad下,要设置300.
 - (void)alertCustomView{
     UIView * view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.height-16, 300)];
     view.backgroundColor = [UIColor clearColor];
@@ -167,6 +182,12 @@
     alertVC = [LCAlertViewController LC_alertControllerWithTitle:@"" customView:view preferredStyle:LCAlertViewControllerStyleActionSheet customWidth:^(CGFloat customViewWidth) {
         NSLog(@"--Attention:-AlertView's width is Fixed by system----%lf",customViewWidth);
     }];
+    UIPopoverPresentationController *popover =alertVC.popoverPresentationController;
+    if (popover) {//适配iPad
+        popover.sourceView = self.view;
+        popover.sourceRect = CGRectMake(0, 0,1, 1);
+        popover.permittedArrowDirections=UIPopoverArrowDirectionAny;
+    }
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         
     }];
